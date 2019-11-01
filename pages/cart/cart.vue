@@ -1,11 +1,11 @@
 <template>
 	<view class="container">
-		<view class="top_nav_segmented">
+<!-- 		<view class="top_nav_segmented">
 			<view class="nav_segmented">
 				<text>{{title}}</text>
 			</view>
 			<view class="right-plus-edit" @click="editList">{{btnEdit}}</view>
-		</view>
+		</view> -->
 		<!-- 空白页 -->
 		<view v-if="!hasLogin || empty===true" class="empty">
 			<image src="/static/emptyCart.jpg" mode="aspectFit"></image>
@@ -23,7 +23,7 @@
 			<view class="cart-list">
 				<block v-for="(item, index) in cartList" :key="index">
 					<view class="cart-item" :class="{'b-b': index!==cartList.length-1}">
-						<view class="image-wrapper">
+						<view class="image-wrapper" >
 							<image :src="item.image" :class="[item.loaded]" mode="aspectFill" lazy-load @load="onImageLoad('cartList', index)"
 							 @error="onImageError('cartList', index)"></image>
 							<view class="yticon icon-xuanzhong2 checkbox" :class="{checked: item.checked}" @click="check('item', index)"></view>
@@ -38,6 +38,9 @@
 						<text class="del-btn yticon icon-fork" @click="deleteCartItem(index)"></text>
 					</view>
 				</block>
+			</view>
+			<view class="cart-edit" @click="editList">
+				<image :src="editImg"></image>
 			</view>
 			<!-- 底部菜单栏 -->
 			<view class="action-section">
@@ -77,7 +80,8 @@
 				title: '购物车',
 				btnCheck: '全选',
 				btnEdit: '编辑',
-				edit:false
+				edit:false,
+				editImg:'../../static/editor.png'
 			};
 		},
 		onLoad() {
@@ -147,15 +151,15 @@
 			},
 			//编辑
 			editList() {
-				if (this.btnEdit === '编辑') {
+				if (this.edit === false) {
 					this.allChecked = false;
-					this.btnEdit = '完成';
+					this.editImg='../../static/success.png';
 					this.edit=true;
 					this.cartList.forEach(item=>{
 						item.checked=false;
 					});
 				} else {
-					this.btnEdit = '编辑';
+					this.editImg='../../static/editor.png';
 					this.edit=false;
 					this.calcTotal(); //计算总价
 				}
@@ -258,9 +262,9 @@
 		padding-bottom: 134upx;
 
 		/* 顶部导航栏 */
-		.top_nav_segmented {
+/* 		.top_nav_segmented {
 			width: 100%;
-			height: 88upx;
+			height: 100upx;
 			position: fixed;
 			z-index: 99;
 			top: 0;
@@ -300,7 +304,7 @@
 				font-size: 28upx;
 				line-height: 44px;
 			}
-		}
+		} */
 
 		/* 空白页 */
 		.empty {
@@ -336,9 +340,9 @@
 	}
 
 	/* 购物车列表项 */
-	.cart-list {
+	/* .cart-list {
 		margin-top: 88upx;
-	}
+	} */
 
 	.cart-item {
 		display: flex;
@@ -405,6 +409,18 @@
 			font-size: 34upx;
 			height: 50upx;
 			color: $font-color-light;
+		}
+	}
+	
+	.cart-edit{
+		width:80upx;
+		height: 80upx;
+		position: fixed;
+		right: 80upx;
+		bottom: 500upx;
+		image{
+			width: 100%;
+			height: 100%;
 		}
 	}
 

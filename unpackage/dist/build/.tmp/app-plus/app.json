@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/product/product",
     "pages/set/set",
-    "pages/userinfo/userinfo",
+    "pages/user/userinfo",
+    "pages/user/collection",
+    "pages/user/verified",
     "pages/cart/cart",
     "pages/public/login",
     "pages/user/user",
@@ -57,13 +59,13 @@
       }
     ]
   },
-  "nvueCompiler": "weex",
+  "nvueCompiler": "uni-app",
   "renderer": "auto",
   "splashscreen": {
     "alwaysShowBeforeRender": true,
     "autoclose": false
   },
-  "appname": "E-commerce",
-  "compilerVersion": "2.3.3",
+  "appname": "Mall",
+  "compilerVersion": "2.3.7",
   "usingComponents": {}
 }

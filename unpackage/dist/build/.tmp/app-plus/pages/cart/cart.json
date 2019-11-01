@@ -1,6 +1,9 @@
 {
   "navigationBarTitleText": "购物车",
+  "enablePullDownRefresh": true,
+  "titleNView": false,
   "usingComponents": {
-    "uni-number-box": "/components/uni-number-box"
+    "uni-number-box": "/components/uni-number-box",
+    "uni-load-more": "/components/uni-load-more/uni-load-more"
   }
 }

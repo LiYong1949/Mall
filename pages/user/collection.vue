@@ -1,13 +1,13 @@
 <template>
 	<view class="container">
-		<view class="top_nav_segmented">
+		<!-- <view class="top_nav_segmented">
 			<view class="left-nav-icon" @click="back"></view>
 			<view class="nav_segmented">
 				<text>{{title}}</text>
 			</view>
 			<view class="right-plus-edit" @click="editList">{{btnEdit}}</view>
 			<view class="right-plus-check" v-show="edit" @click="check('all')">{{btnCheck}}</view>
-		</view>
+		</view> -->
 		<!-- 空白页 -->
 		<view v-if="!hasLogin || empty===true" class="empty">
 			<image src="/static/emptyCart.jpg" mode="aspectFit"></image>
@@ -39,6 +39,9 @@
 					</view>
 				</block>
 			</view>
+			<view class="cart-edit" @click="editList">
+				<image :src="editImg"></image>
+			</view>
 			<!-- 底部菜单栏 -->
 			<view class="clear-btn" v-if="del" @click="clearCart">
 				删除
@@ -64,9 +67,7 @@
 				cartList: [],
 				edit: false,
 				del: false,
-				title:'收藏',
-				btnCheck:'全选',
-				btnEdit:'编辑'
+				editImg:'../../static/editor.png'
 			};
 		},
 		onLoad() {
@@ -94,7 +95,7 @@
 				});
 				this.cartList = cartList;
 				this.calcTotal(); //计算总价
-				
+
 			},
 			//监听image加载完成
 			onImageLoad(key, index) {
@@ -109,21 +110,21 @@
 					url: '/pages/public/login'
 				})
 			},
-			editList(e){
-				if(this.btnEdit==='编辑'){
-					this.edit=true;
-					this.del=true;
-					this.btnEdit='完成';
-					this.cartList.forEach(item=>{
-						item.checked=true;
+			editList(e) {
+				if (this.edit === false) {
+					this.edit = true;
+					this.del = true;
+					this.editImg='../../static/success.png';
+					this.cartList.forEach(item => {
+						item.checked = true;
 					});
-				}else{
-				this.btnEdit='编辑';
-				this.edit=false;
-				this.del=false;
+				} else {
+					this.editImg='../../static/editor.png';
+					this.edit = false;
+					this.del = false;
 				}
 			},
-			back(){
+			back() {
 				uni.navigateBack();
 			},
 			//选中状态处理
@@ -158,13 +159,13 @@
 			//删除选中
 			clearCart() {
 				let list = this.cartList;
-				let selectedlist=[];
+				let selectedlist = [];
 				list.forEach(item => {
 					if (item.checked === true) {
 						selectedlist.push(item);
 					}
 				});
-				if(selectedlist.length===0){
+				if (selectedlist.length === 0) {
 					this.$api.msg('未选中商品');
 					return false;
 				}
@@ -175,7 +176,7 @@
 					}
 				});
 				uni.showModal({
-					content: '删除选中购物车？',
+					content: '删除选中收藏？',
 					success: (e) => {
 						if (e.confirm) {
 							this.cartList = unselectedlist;
@@ -238,7 +239,8 @@
 			z-index: 99;
 			top: 0;
 			background: #fff;
-			.left-nav-icon{
+
+			.left-nav-icon {
 				content: " ";
 				height: 25upx;
 				width: 25upx;
@@ -249,20 +251,23 @@
 				margin-left: 30upx;
 				margin-top: 30upx;
 			}
-			.nav_segmented{
+
+			.nav_segmented {
 				display: inline-block;
 				font-weight: 700;
 				line-height: 44px;
-				margin-left:40%;
+				margin-left: 40%;
 			}
-			.right-plus-check{
+
+			.right-plus-check {
 				display: inline-block;
 				margin-right: 20upx;
 				float: right;
 				font-size: 28upx;
 				line-height: 44px;
 			}
-			.right-plus-edit{
+
+			.right-plus-edit {
 				display: inline-block;
 				margin-right: 20upx;
 				float: right;
@@ -305,10 +310,6 @@
 	}
 
 	/* 购物车列表项 */
-	.cart-list{
-		margin-top:88upx;
-	}
-	
 	.cart-item {
 		display: flex;
 		position: relative;
@@ -367,7 +368,19 @@
 			}
 		}
 
-		
+
+	}
+	/* 编辑按钮 */
+	.cart-edit{
+		width:80upx;
+		height: 80upx;
+		position: fixed;
+		right: 80upx;
+		bottom: 500upx;
+		image{
+			width: 100%;
+			height: 100%;
+		}
 	}
 
 	/* 底部删除 */

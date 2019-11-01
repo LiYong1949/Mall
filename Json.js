@@ -7,7 +7,7 @@ const userInfo = {
 		nickname: 'Leo yo',
 		realname: '',
 		idnumber: '',
-		portrait: 'http://img.61ef.cn/news/201409/28/2014092805595807.jpg',
+		portrait: 'http://localhost:435/files/Image/2019/10/31/3f42efd3-0759-4cce-8eae-8b8e059aa653.jpeg',
 		overage: 44353.45,
 		gender: 0,
 		viplevel: 'vip5',

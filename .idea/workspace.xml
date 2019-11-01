@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed8b3e84-02e3-470e-a9e7-abbf5f8affce" name="默认" comment="" />
+    <list default="true" id="15545399-d274-4775-ad60-daf654fd9c4e" name="默认" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,11 +12,6 @@
   <component name="DefaultGradleProjectSettings">
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
-  </component>
-  <component name="FindInProjectRecents">
-    <dirStrings>
-      <dir>C:\Users\li\Documents\HBuilderProjects\E-commerce</dir>
-    </dirStrings>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="260" />
@@ -29,24 +24,29 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="E-commerce" type="b2602c69:ProjectViewProjectNode" />
-              <item name="E-commerce" type="462c0819:PsiDirectoryNode" />
+              <item name="Mall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mall" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Mall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mall" type="462c0819:PsiDirectoryNode" />
+              <item name="unpackage" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="android.sdk.path" value="D:/Program Files/Android/Sdk" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -65,33 +65,32 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ed8b3e84-02e3-470e-a9e7-abbf5f8affce" name="默认" comment="" />
-      <created>1570851807634</created>
+      <changelist id="15545399-d274-4775-ad60-daf654fd9c4e" name="默认" comment="" />
+      <created>1572493313043</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1570851807634</updated>
+      <updated>1572493313043</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
+      <window_info id="设计器" />
+      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.1601686" />
+      <window_info id="Structure" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Capture Tool" />
+      <window_info id="Resources Explorer" />
+      <window_info id="Favorites" side_tool="true" />
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info id="设计器" order="1" />
-      <window_info id="Resources Explorer" order="2" />
-      <window_info id="Structure" order="3" side_tool="true" />
-      <window_info id="Image Layers" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.32982087" />
-      <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="TODO" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
-      <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info anchor="right" id="Theme Preview" order="1" />
-      <window_info anchor="right" id="Palette&#9;" order="2" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="TODO" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Palette&#9;" />
     </layout>
   </component>
   <component name="masterDetails">

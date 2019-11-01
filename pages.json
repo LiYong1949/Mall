@@ -65,10 +65,7 @@
 		{
 			"path": "pages/user/collection",
 			"style": {
-				"navigationBarTitleText": "收藏",
-				"app-plus": {
-					"titleNView": false
-				}
+				"navigationBarTitleText": "收藏"
 			}
 		}, {
 			"path": "pages/user/verified",
@@ -79,10 +76,9 @@
 			"path": "pages/cart/cart",
 			"style": {
 				"navigationBarTitleText": "购物车",
-				"app-plus":{
-					"titleNView":false
-				},
-				"enablePullDownRefresh": true
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		}, {
 			"path": "pages/public/login",

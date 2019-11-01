@@ -4,14 +4,14 @@
     "iPhone",
     "iPad"
   ],
-  "id": "",
-  "name": "E-commerce",
+  "id": "__UNI__E9B8DE5",
+  "name": "Mall",
   "version": {
     "name": "1.0.0",
     "code": "100"
   },
   "description": "",
-  "launch_path": "__uniapptabbar.html",
+  "launch_path": "__uniappview.html",
   "developer": {
     "name": "",
     "email": "",
@@ -24,7 +24,7 @@
   },
   "plus": {
     "useragent": {
-      "value": "uni-app appservice",
+      "value": "uni-app",
       "concatenate": true
     },
     "splashscreen": {
@@ -34,13 +34,18 @@
       "delay": 0
     },
     "popGesture": "close",
-    "launchwebview": {},
+    "launchwebview": {
+      "id": "1",
+      "kernel": "WKWebview",
+      "uni-app": "auto"
+    },
     "statusbar": {
       "immersed": "supportedDevice",
       "style": "dark",
       "background": "#FFFFFF"
     },
     "usingComponents": true,
+    "nvueCompiler": "uni-app",
     "distribute": {
       "google": {
         "permissions": [
@@ -85,18 +90,50 @@
       }
     },
     "uni-app": {
-      "compilerVersion": "2.3.3",
+      "compilerVersion": "2.3.7",
       "control": "v8",
-      "nvueCompiler": "weex",
-      "renderer": "auto"
+      "nvueCompiler": "uni-app",
+      "renderer": "auto",
+      "nvue": {
+        "flex-direction": "column"
+      }
     },
-    "secondwebview": {
-      "id": "1",
-      "launch_path": "__uniappview.html",
-      "kernel": "WKWebview",
-      "mode": "child",
-      "top": 0,
-      "bottom": 56
+    "tabBar": {
+      "color": "#C0C4CC",
+      "selectedColor": "#fa436a",
+      "borderStyle": "rgba(0,0,0,0.4)",
+      "backgroundColor": "#ffffff",
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "iconPath": "static/tab-home.png",
+          "selectedIconPath": "static/tab-home-current.png",
+          "text": "首页"
+        },
+        {
+          "pagePath": "pages/category/category",
+          "iconPath": "static/tab-cate.png",
+          "selectedIconPath": "static/tab-cate-current.png",
+          "text": "分类"
+        },
+        {
+          "pagePath": "pages/cart/cart",
+          "iconPath": "static/tab-cart.png",
+          "selectedIconPath": "static/tab-cart-current.png",
+          "text": "购物车"
+        },
+        {
+          "pagePath": "pages/user/user",
+          "iconPath": "static/tab-my.png",
+          "selectedIconPath": "static/tab-my-current.png",
+          "text": "我的"
+        }
+      ],
+      "height": "50px",
+      "child": [
+        "lauchwebview"
+      ],
+      "selected": 0
     }
   }
 }
